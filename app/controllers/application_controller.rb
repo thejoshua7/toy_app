@@ -4,5 +4,9 @@ class ApplicationController < ActionController::Base
   def hello
     render html: "Hello World from Ruby on Rails!"
   end
+
+  def index
+    @client_ip = request.remote_ip
+  end
   
 end

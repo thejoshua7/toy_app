@@ -3,12 +3,31 @@
   <head>
     <title>ToyApp</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag 'application', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><%= link_to "Home", home_path, :class=>"nav-link" %>
+          </li>
+          <li class="nav-item active"><%= link_to "User", new_user_path, :class=>"nav-link"  %>
+          </li>
+          <li class="nav-item active"><%= link_to  "Post", new_micropost_path, :class=>"nav-link"  %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <br>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

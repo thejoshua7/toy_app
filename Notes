@@ -1,0 +1,10 @@
+rails g scaffold User name:string email:string ipaddress:string validated:boolean --force
+
+$ rails db:migrate
+
+#bootstrap added
+\views\layouts\application.html.erb
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+
+
+rails generate scaffold Micropost content:text user_id:integer ipaddress:string location:string
